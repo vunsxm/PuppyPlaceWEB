@@ -1,0 +1,98 @@
+* { margin:0; padding:0; box-sizing: border-box; }
+li { list-style:none; }
+a { text-decoration: none; color:#333; display: block;}
+/* a태그에 마우스 오버하면 글자색 회색으로 변경함 */
+a:hover {color:#ccc;}
+img { width:100%; }
+/* 헤더 */
+header {
+    width:1200px;
+    height:140px;
+    /* margin:0 auto; */
+    display: flex;
+    justify-content: space-between;   /*가로 간격 일정하게*/
+    align-items: center;        /*세로 가운데 정렬*/
+    /* 헤더를 브라우저의 맨 위에 고정시키기 */
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    background-color: #fff;
+    transition:height 0.5s;
+}
+/* 로고 */
+header .logo {
+    width:140px;
+}
+/* 내비게이션(GNB:Global Navigation Bar) */
+header nav {
+    width:500px;
+    height:30px;
+}
+/* 직속 자식 선택자 : > */
+header nav > ul {
+    /* 자식 객체 li를 가로(row:행기준)로 나열 */
+    display: flex;
+    /* 균등 정렬 */
+    justify-content: space-between;
+}
+/* 서브메뉴(.sub)의 위치 설정할 때 기준은 부모객체 li가 됨 */
+header nav > ul > li {
+    position: relative;
+}
+/* 주메뉴의 글자 크기 작게 - 직속 자식 선택자*/
+header nav > ul > li > a {
+    font-size:15px;
+    /* 주메뉴와 서브메뉴의 거리 조절(간격) */
+    padding-bottom:20px;
+    /* margin-bottom: 20px; */
+}
+/* 서브메뉴 - 하위 선택자*/
+header nav .sub {
+    background-color: #444;
+    padding:20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition:all 0.3s;
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+header nav .sub li a {
+    font-size:13px;
+    color:#fff;
+    padding:5px 0;
+    text-align: center;
+}
+/* 주메뉴에 마우스 오버했을 때 서브메뉴 나타남 */
+header nav > ul > li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+}
+/* 서브메뉴에 마우스 오버했을 때 서브메뉴 글자색 변경 */
+header nav .sub li a:hover {
+    color:#ccc;
+}
+
+/* header안의 자식 객체 .top_menu를 가리킴, 띠어쓰기(하위선택자) */
+header .top_menu {
+    width:280px;
+}
+header .top_menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+header .top_menu ul li a {
+    font-size: 13px;
+    letter-spacing: -1px ;  /*자간*/
+    position: relative;
+}
+/* 장바구니 위에 숫자 0 넣기 */
+header .top_menu ul li:last-child a:after {
+    content:"0";
+    position: absolute;
+    left:5px;
+    top:4px;
+    color:#fff;
+    font-size:10px;
+}
