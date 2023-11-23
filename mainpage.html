@@ -1,5 +1,12 @@
+<!DOCTYPE html>
 <html>
- <header>
+<head>
+  <!-- 네이버 지도 api 가져오기  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script type="text/javascript" 
+          src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7rc4pb3ode"></script>
+
   <link rel="stylesheet" href="mainpage.css">
   <div class="logo">
     <a href="PuppyPlace.html">
@@ -37,5 +44,22 @@
       </a></li>
     </ul>
   </div> <!--로그인 회원가입 마이페이지-->
- </header>
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 800px; margin:auto"></div>
+  
+  <script>
+
+    var map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(37.5112, 127.0981),
+      zoom: 15
+    });
+
+    // 지도에 마커 찍기
+    var marker = new naver.marker({
+      position: new naver.maps.LatLng(37.5112, 127.0981),
+      map: map
+    });
+  </script>
+</body>
 </html>
