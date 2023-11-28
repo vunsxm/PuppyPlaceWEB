@@ -22,8 +22,11 @@ header {
 }
 /* 로고 */
 header .logo {
-    width:140px;
+    width: 50px;
+    overflow: hidden;
+    float: left;
 }
+
 /* 내비게이션(GNB:Global Navigation Bar) */
 header nav {
     width:500px;
