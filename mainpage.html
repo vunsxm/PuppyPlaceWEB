@@ -8,57 +8,46 @@
           src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7rc4pb3ode"></script>
 
   <link rel="stylesheet" href="mainpage.css">
-  <!--로고 영역-->
-  <div class="logo" style="width: 250px; height: 100px; margin-left: 30px;">
-    <img src="img/logoTitle.png" alt="logo" />
-  </div>
-  <!--네비게이션(GNB) 영역 -->
-  <!-- <nav>
-    <ul>
-      <li>
-        <a hrdf="#">SEARCH</a>
-      </li>
-      <li>
-        <a href="#">NOTICE</a>
-      </li>
-      <li>
-        <a href="#">REVIEW</a>
-      </li>
-      <li>
-        <a href="#">COMMUNITY</a>
-        <ul class="sub">
-          <li><a href="#">EVENT</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </li>
-     </ul>
-  </nav> -->
-  <!-- <div class="top_menu">
-    <ul>
-      <li><a href="#">로그인</a></li>
-      <li><a href="#">회원가입</a></li>
-      <li><a href="#">마이페이지</a></li>
-      <li><a href="#" class="cart">
-        <img src="img/header_ico_cart.jpg" alt="cart">
-      </a></li>
-    </ul>
-  </div> 로그인 회원가입 마이페이지 -->
 </head>
 <body>
-  <div id="map" style="width: 90%; height: 800px; margin:auto"></div>
+  <div id="map">
+    <!--좌측 네비바-->
+    <!-- 로고 이미지 영역 -->
+    <div class="logo">
+      <img src="img/logo.png" alt="logo" style="width: 60px; height: 100px; margin: 20px;"/>
+      <div class="menu">
+        <img class="menu_img" src="img/menu.png" alt="menu" >
+        <img class="menu_hover_img" src="img/menu_hover.png" >
+      </div>
+      <div class="bookmark">
+        <img class="bookmark_img" src="img/bookmark.png" alt="bookmark" >
+        <img class="bookmark_hover_img" src="img/bookmark_hover.png">
+      </div>
+    </div>
+    
+    <!-- 검색 영역 -->
+    <div class="search">
+      <input class="search_input" type="text" id="place_search" placeholder="장소 검색" autofocus >
+      <!-- 검색 버튼 이미지 -->
+      <div class="search_icon" style="width: 30px; height: 30px; float: right; margin-right: 10px; margin-top: 3px;">
+        <img src="img/search.png" alt="search"/>
+      </div>
+    </div>
+
+    <script>
+      var map = new naver.maps.Map('map', {
+        center: new naver.maps.LatLng(37.5112, 127.0981),
+        zoom: 15
+      });
   
-  <script>
+      // 지도에 마커 찍기
+      var marker = new naver.marker({
+        position: new naver.maps.LatLng(37.5112, 127.0981),
+        map: map
+      });
+    </script>
+  </div>
+  
 
-    var map = new naver.maps.Map('map', {
-      center: new naver.maps.LatLng(37.5112, 127.0981),
-      zoom: 15
-    });
-
-    // 지도에 마커 찍기
-    var marker = new naver.marker({
-      position: new naver.maps.LatLng(37.5112, 127.0981),
-      map: map
-    });
-  </script>
 </body>
 </html>
