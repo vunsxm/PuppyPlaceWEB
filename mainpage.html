@@ -4,6 +4,7 @@
   <!-- 네이버 지도 api 가져오기  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- 네이버 지도 api 링크 연결 -->
   <script type="text/javascript" 
           src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7rc4pb3ode"></script>
   <!-- 스타일 css 지정 -->
@@ -17,7 +18,7 @@
     <!-- 로고 이미지 영역 -->
     <div class="logo">
       <img src="img/logo.png" alt="logo" style="width: 60px; height: 100px; margin: 20px;"/>
-      <!-- 메뉴 아이콘 -->
+      <!-- 메뉴 구역 -->
       <div class="menu">
 
         <!-- 메뉴 조건 설정창 -->
@@ -25,15 +26,18 @@
           <br>
           <strong style="font-size:x-large;">조건 설정</strong>
           <br><br><br><hr><br><br>
+          <!-- 크기 체크박스 -->
           <b>크기&nbsp;&nbsp;&nbsp;&nbsp;</b>
             <label><input type="checkbox" name="size" value="big">&nbsp;대형&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <label><input type="checkbox" name="size" value="mid">&nbsp;중형&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <label><input type="checkbox" name="size" value="small">&nbsp;소형</label>
           <br><br>
+          <!-- 동반 여부 체크박스 -->
           <b>동반&nbsp;&nbsp;&nbsp;&nbsp;</b>
             <label><input type="checkbox" name="accomp" value="inside">&nbsp;실내&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <label><input type="checkbox" name="accomp" value="outside">&nbsp;실외&nbsp;&nbsp;&nbsp;&nbsp;</label>
           <br><br>
+          <!-- 요금 체크박스 -->
           <p>
             <b>요금&nbsp;&nbsp;&nbsp;&nbsp;</b>
               <label><input type="checkbox" name="charge" value="one">&nbsp;0~10,000</label>
@@ -44,12 +48,13 @@
               <b style="color: white;">요금&nbsp;&nbsp;&nbsp;&nbsp;</b>
               <label><input type="checkbox" name="charge" value="three">&nbsp;20,000~30,000</label>
           </p><br>
+          <!-- 주차 여부 체크박스 -->
           <b>주차&nbsp;&nbsp;&nbsp;&nbsp;</b>
             <label><input type="checkbox" name="park" value="able">&nbsp;가능&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <label><input type="checkbox" name="park" value="unab">&nbsp;불가능&nbsp;&nbsp;&nbsp;&nbsp;</label>
           <br><br>
         </div>
-
+        <!-- 메뉴 아이콘 -->
         <img class="menu_img" src="img/menu.png" alt="menu" >
         <!-- 마우스 오버 시 바뀌는 아이콘 -->
         <img class="menu_hover_img" src="img/menu_hover.png" >
@@ -75,8 +80,9 @@
     </div>
 
     <script>
-      // 지도에서 기본으로 보여지는 위치
+      // 지도 api 스크립트 연결
       var map = new naver.maps.Map('map', {
+        // 웹사이트를 들어갔을 때 기본으로 보여지는 지도 위치
         center: new naver.maps.LatLng(37.5112, 127.0981),
         zoom: 15
       });
